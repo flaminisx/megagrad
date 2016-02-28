@@ -32,4 +32,19 @@ body
 .back-black
 {
 	background: #1c1919;
+	color:white;
+}
+
+.bg-width: {
+	width:100%;
+}
+
+.input-group
+{
+	display:block;
+	border-radius: 5px;
+}
+
+.mg{
+	margin-bottom: 15px
 }
