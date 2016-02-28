@@ -3,6 +3,11 @@ body
 	color:#443f3f;
 }
 
+.padding
+{
+	padding-left:20px;
+}
+
 .background {
 	background:url(../img/bg-texture.png);
 	width:100%;
@@ -19,7 +24,12 @@ body
 	color:#d33333;
 }
 
-.primory-text
+.primary-text
 {
 	color:#443f3f;
+}
+
+.back-black
+{
+	background: #1c1919;
 }
