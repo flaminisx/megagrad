@@ -1,21 +1,30 @@
-Skip to content
-This repository  
-Search
-Pull requests
-Issues
-Gist
- @flaminisx
- Unwatch 2
-  Star 0
- Fork 0 flaminisx/megagrad
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file Copy pathmegagrad/css/main.css
-375068a  34 minutes ago
-@flaminisx flaminisx object
-1 contributor
-RawBlameHistory     59 lines (58 sloc)  985 Bytes
 html{
 	margin: 0;
+}
+*{
+		font-family: 'Open Sans', sans-serif;
+}
+.padding{
+	padding-left:20px;
+}
+
+.background {
+	background:url(../img/bg-texture.png);
+	width:100%;
+	z-index: -1;
+}
+
+.accent {
+	background-color: rgb(211, 51, 51);
+	color:white;
+}
+
+.accent-text{
+	color:#d33333;
+}
+
+.primary-text{
+	color:#443f3f;
 }
 .logo-wrapper{
 	padding: 15px;
@@ -73,3 +82,44 @@ html{
 #aluminium span {
 	color: #d33333;
 }
+nav{
+	height: 84px;
+	padding: 35px;
+}
+nav .wrapper{
+	height: 100%;
+}
+nav a{
+	font-size: 15px;
+	text-decoration: none;
+	border: 1px solid rgb(68, 63, 63);
+	border-radius: 50px;
+	padding: 7px;
+	color:rgb(68, 63, 63);
+	margin-right: 4px;
+	font-family: 'Open Sans', sans-serif;
+}
+nav a:hover{
+	text-decoration: none;
+	background: rgb(68, 63, 63);
+	color: white;
+}
+nav span.btn{
+	font-size: 15px;
+	border-radius: 50px;
+	padding: 7px;
+	font-family: 'Open Sans', sans-serif;
+}
+.metr{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	height: 84px;
+	position:relative;
+	bottom:0;
+}
+.metr .wrapper{
+	margin:0 auto;
+	margin-top:20px;
+}
+
+.bold{font-weight: 700}
