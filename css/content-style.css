@@ -1,10 +1,8 @@
-body
-{
+body{
 	color:#443f3f;
 }
 
-.padding
-{
+.padding{
 	padding-left:20px;
 }
 
@@ -23,13 +21,11 @@ body
 	color:#d33333;
 }
 
-.primary-text
-{
+.primary-text{
 	color:#443f3f;
 }
 
-.back-black
-{
+.back-black{
 	background: #1c1919;
 	color:white;
 }
@@ -38,8 +34,7 @@ body
 	width:100%;
 }
 
-.input-group
-{
+.input-group{
 	display:block;
 	border-radius: 5px;
 }
@@ -48,18 +43,29 @@ body
 	margin-bottom: 15px
 }
 
-.height-lg
-{
+.height-lg{
 	height:90px;
 }
 
-.btn-block
-{
+.btn-block{
 	 box-shadow:  0 5px 0 0px #ab2525;
 }
 
-.addres
-{
+.addres{
 	vertical-align:bottom; /* вот она */
 	display:inline-block;
+}
+
+.cart{
+	text-align:center;
+}
+
+.underline
+{
+	text-decoration: underline;
+}
+
+.slider-1
+{
+	color:#443f3f;
 }
