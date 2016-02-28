@@ -1,3 +1,50 @@
 html{
 	margin: 0;
 }
+.logo-wrapper{
+	padding: 15px;
+}
+.logo{
+	background: url(../img/logo.png) no-repeat;
+	background-size: contain;
+	width:100%;
+	height: 54px;
+}
+.no-padding{
+	padding:0;
+}
+.no-padding>*{
+	width:100%;
+}
+.left-bar ul span{
+	padding:15px;
+	display:block;
+	height:65px;
+	font-size: 15px;
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+}
+.left-bar ul span img{
+	height: 35px;
+	margin-right: 13px;
+}
+.left-bar ul{
+	color: rgb(68, 63, 63);
+	border-width: 1px;
+	border-color: rgb(218, 218, 218);
+	border-style: solid;
+	padding-left: 0;
+}
+.left-bar ul>li{
+	font-size: 12px;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif;
+	color: rgb(68, 63, 63);
+	line-height: 1.75;
+	background-color: rgb(243, 243, 243);
+	list-style: none;
+	padding: 7px 0 7px 14px;
+}
+.left-bar ul>li:hover{
+	background-color: rgb(229, 229, 229);
+}
