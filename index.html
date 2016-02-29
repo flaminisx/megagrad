@@ -55,7 +55,7 @@
 							<a href="#">Услуги</a>
 							<a href="#">Галерея работ</a>
 							<a href="#">Акции</a>
-							<a href="#">Новости</a>
+							<a href="#some-news">Новости</a>
 							<a href="#content-contacts">Контакты</a>
 							<span class="bold">+38 (067) 123 45 67</span>
 							<span class="btn accent">Перезвоните мне</span>
@@ -75,7 +75,7 @@
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				var p = (location.hash) ? location.hash.replace("#", "") : "objects";
+				var p = (location.hash) ? location.hash.replace("#", "") : "some-news";
 				//console.log(p);
 				changePage(p);
 				$("nav").find("a").click(function(e){
