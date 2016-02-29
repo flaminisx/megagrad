@@ -1,6 +1,7 @@
 html{
 	margin: 0;
 }
+html,body {height:100%;}
 *{
 		font-family: 'Open Sans', sans-serif;
 }
@@ -102,7 +103,15 @@ nav a{
 nav a:hover{
 	text-decoration: none;
 	background: rgb(68, 63, 63);
-	color: white;
+	color: white !important;
+}
+nav a:focus{
+	outline:0;
+	text-decoration: none;
+	color:rgb(68, 63, 63);
+}
+nav a:active{
+	color:white;
 }
 nav span.btn{
 	font-size: 15px;

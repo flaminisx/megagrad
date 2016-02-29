@@ -41,6 +41,12 @@
 							<span><img src="img/facade-icon.png">Вентилируемие<br>фасадные системы</span>
 						</ul>
 					</div>
+					<div class="metr accent">
+						<div class="wrapper">
+							<img src="img/icon_roulette.png">
+							<span>Вызвать замерщика</span>
+						</div>
+					</div>
 				</div>
 				<div class="col-lg-10 no-padding">
 					<nav class="background">
@@ -50,7 +56,7 @@
 							<a href="#">Галерея работ</a>
 							<a href="#">Акции</a>
 							<a href="#">Новости</a>
-							<a href="#">Контакты</a>
+							<a href="#content-contacts">Контакты</a>
 							<span class="bold">+38 (067) 123 45 67</span>
 							<span class="btn accent">Перезвоните мне</span>
 						</div>
@@ -59,12 +65,6 @@
 						
 					</main>
 				</div>
-					<div class="metr accent col-lg-2">
-						<div class="wrapper">
-							<img src="img/icon_roulette.png">
-							<span>Вызвать замерщика</span>
-						</div>
-					</div>
 			</div>
 			<footer class="row">
 
@@ -75,8 +75,18 @@
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("main#main-content").load("content-contacts.html");
+				var p = (location.hash) ? location.hash.replace("#", "") : "objects";
+				//console.log(p);
+				changePage(p);
+				$("nav").find("a").click(function(e){
+					changePage($(e.target).attr("href").replace("#", ""));
+				});
 			});
+			function changePage(page_name){
+				$("main#main-content").load(page_name + ".html", function(){
+					$("#header-text").text($(".hidden-header-text").attr("value"));
+				});
+			}
 		</script>
 	</body>
 </html>
