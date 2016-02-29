@@ -1,6 +1,7 @@
 html{
 	margin: 0;
 }
+html,body {height:100%;}
 *{
 		font-family: 'Open Sans', sans-serif;
 }
@@ -10,8 +11,6 @@ html{
 
 .background {
 	background:url(../img/bg-texture.png);
-	width:100%;
-	z-index: -1;
 }
 
 .accent {
@@ -84,7 +83,7 @@ html{
 }
 nav{
 	height: 84px;
-	padding: 35px;
+	padding-top: 35px;
 }
 nav .wrapper{
 	height: 100%;
@@ -102,7 +101,15 @@ nav a{
 nav a:hover{
 	text-decoration: none;
 	background: rgb(68, 63, 63);
-	color: white;
+	color: white !important;
+}
+nav a:focus{
+	outline:0;
+	text-decoration: none;
+	color:rgb(68, 63, 63);
+}
+nav a:active{
+	color:white;
 }
 nav span.btn{
 	font-size: 15px;
@@ -113,13 +120,20 @@ nav span.btn{
 .metr{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
-	height: 84px;
+	height: 74px;
 	position:relative;
 	bottom:0;
 }
 .metr .wrapper{
 	margin:0 auto;
 	margin-top:20px;
+	padding: 15px;
 }
 
 .bold{font-weight: 700}
+.main-row{
+	margin: 0;
+}
+footer{
+	margin-top: 15px;
+}

@@ -9,8 +9,8 @@
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div class="container-fluid">
-			<div class="row">
+		<div class="main-container">
+			<div class="row main-row">
 				<div class="col-lg-2 left-bar no-padding">
 					<div class="logo-wrapper">
 						<div class="logo"></div>
@@ -41,16 +41,22 @@
 							<span><img src="img/facade-icon.png">Вентилируемие<br>фасадные системы</span>
 						</ul>
 					</div>
+					<div class="metr accent">
+						<div class="wrapper">
+							<img src="img/icon_roulette.png">
+							<span>Вызвать замерщика</span>
+						</div>
+					</div>
 				</div>
-				<div class="col-lg-10 no-padding">
-					<nav class="background">
+				<div class="col-lg-10 background">
+					<nav>
 						<div class="wrapper">
 							<a href="#"><img src="img/ic_menu_48px.png"> Производство</a>
 							<a href="#">Услуги</a>
-							<a href="#">Галерея работ</a>
-							<a href="#">Акции</a>
-							<a href="#">Новости</a>
-							<a href="#">Контакты</a>
+							<a href="#objects">Галерея работ</a>
+							<a href="#some-discount">Акции</a>
+							<a href="#some-news">Новости</a>
+							<a href="#content-contacts">Контакты</a>
 							<span class="bold">+38 (067) 123 45 67</span>
 							<span class="btn accent">Перезвоните мне</span>
 						</div>
@@ -58,25 +64,28 @@
 					<main id="main-content">
 						
 					</main>
-				</div>
-					<div class="metr accent col-lg-2">
-						<div class="wrapper">
-							<img src="img/icon_roulette.png">
-							<span>Вызвать замерщика</span>
+					<footer>
+						<div class="row">
+							<span class="col-lg-3">Сайт разработано<br> в веб-студии igmish.com</span>
 						</div>
-					</div>
-			</div>
-			<footer class="row">
-
-				<div class="col-lg-10">
-					
+					</footer>
 				</div>
-			</footer>
+			</div>
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("main#main-content").load("news.html");
+				var p = (location.hash) ? location.hash.replace("#", "") : "some-news";
+				//console.log(p);
+				changePage(p);
+				$("nav").find("a").click(function(e){
+					changePage($(e.target).attr("href").replace("#", ""));
+				});
 			});
+			function changePage(page_name){
+				$("main#main-content").load(page_name + ".html", function(){
+					$("#header-text").text($(".hidden-header-text").attr("value"));
+				});
+			}
 		</script>
 	</body>
 </html>
