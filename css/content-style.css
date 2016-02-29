@@ -47,3 +47,32 @@ body{
 {
 	color:#443f3f;
 }
+
+.pagination>li>a
+{
+	background-color: #fefefe;
+	color:#7d7d7d;
+	font-size: 22px;
+	box-shadow:  0 1px 0 0px #7d7d7d;
+}
+
+.pagination>li:first-child>a
+{
+	border-radius:100px 0 0 100px;
+}
+
+.pagination>li:last-child>a
+{
+	border-radius:0 100px 100px 0;
+}
+
+.padding-top
+{
+	padding-top: 25px;
+	color:#7d7d7d;
+}
+
+.border-white
+{
+	border:5px solid #FFFFFF ;
+}
