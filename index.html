@@ -48,7 +48,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-10 background">
+				<div class="col-lg-10 background no-padding">
 					<nav>
 						<div class="wrapper">
 							<a href="#"><img src="img/ic_menu_48px.png"> Производство</a>
@@ -67,9 +67,94 @@
 					<footer>
 						<div class="row">
 							<span class="col-lg-3">Сайт разработано<br> в веб-студии igmish.com</span>
+							<div class="col-lg-offset-3 col-lg-3">
+								<img src="img/facebook.png">
+								<img src="img/vk.png">
+								<img src="img/google_plus.png">
+							</div>
+							<div class="online-consult col-lg-3 accent">
+								<span class="left">Онлайн-консультант</span>
+								<span class="JivoSite right">JivoSite</span>
+							</div>
 						</div>
 					</footer>
 				</div>
+			</div>
+		</div>
+		<div class="modal-container" style="display:none">
+			<div id="modal">
+				<form>
+					<h1>Вызвать замерщика</h1>
+					<div class="container-fluid">
+						<div class="row radios">
+							<div class="col-lg-4">
+								<div class="wrapper">
+									<input type="radio" id="rb-window" name="type" value="window"/>
+									<label for="rb-window">Окна</label>
+								</div>
+							</div>
+							<div class="col-lg-3 col-lg-offset-1">
+								<div class="wrapper">
+									<input type="radio" id="rb-door" name="type" value="door"/>
+									<label for="rb-door">Двери</label>
+								</div>
+							</div>
+							<div class="col-lg-2 col-lg-offset-1">
+								<div class="wrapper">
+									<input type="radio" id="rb-blinds" name="type" value="blinds"/>
+									<label for="rb-blinds">Роллеты</label>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="wrapper">
+									<input type="radio" id="rb-gates" name="type" value="gates"/>
+									<label for="rb-gates">Ворота</label>
+								</div>
+							</div>
+							<div class="col-lg-3 col-lg-offset-1">
+								<div class="wrapper">
+									<input type="radio" id="rb-balcony" name="type" value="balcony"/>
+									<label for="rb-balcony">Балконы</label>
+								</div>
+							</div>
+							<div class="col-lg-2 col-lg-offset-1">
+								<div class="wrapper">
+									<input type="radio" id="rb-other" name="type" value="other"/>
+									<label for="rb-other">Другое</label>
+								</div>
+							</div>
+						</div>
+						<div class="row inputs">
+							<div class="col-lg-6">
+								<input type="text" name="date" placeholder="Желаемая дата замера"/>
+							</div>
+							<div class="col-lg-6">
+								<input type="text" name="time" placeholder="Желаемое время время замера"/>
+							</div>
+							<div class="col-lg-12">
+								<input type="address" name="time" placeholder="Адрес, где сделать замеры"/>
+							</div>
+							<div class="col-lg-12">
+								<hr/>
+							</div>
+							<div class="col-lg-6">
+								<input type="text" name="name" placeholder="Ваше имя"/>
+							</div>
+							<div class="col-lg-6">
+								<input type="text" name="tel" placeholder="Ваш телефон"/>
+							</div>
+							<div class="col-lg-12">
+								<input type="email" name="email" placeholder="Ваш e-mail"/>
+							</div>
+							<div class="col-lg-12">
+								<textarea name="message" placeholder="Ваше сообщение"></textarea>
+							</div>
+							<div class="col-lg-12">
+								<button class="accent">Отправить сообщение</button>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 		<script type="text/javascript">
