@@ -1,6 +1,25 @@
 <div class="slider-container">
-	<img src="img/slider1.png">
-	<img src="img/slider2.png">
-	<img src="img/slider3.png">
-	<img src="img/slider4.png">
+	<div class="images">
+		<img src="img/slider1.png" style="display:block;">
+		<img src="img/slider2.png">
+		<img src="img/slider3.png">
+		<img src="img/slider4.png">
+	</div>
 </div>
+
+<script>
+	$(document).ready(function(){
+		var images = $(".slider-container").find("img");
+		//$(".slider-container").height($(images[0]).height());
+		var shownNum = 0;
+		var lastShown = 0;
+		$(".slider-container").click(function(){
+			lastShown = shownNum;
+			if(shownNum != images.length - 1) shownNum++;
+				else shownNum = 0;
+			$(images[lastShown]).fadeOut(function(){
+				$(images[shownNum]).fadeIn();
+			});
+		});
+	});
+</script>

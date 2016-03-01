@@ -87,6 +87,13 @@ body{
 }
 .slider-container{
 	width:100%;
-	/*margin:0 30px 0 15px;*/
+	padding:0 15px 0 15px;
 	overflow:hidden;
+}
+.slider-container img{
+	width:100%;
+	display: none;
+}
+.slider-container img.show{
+	display:block;
 }
