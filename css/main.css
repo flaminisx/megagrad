@@ -87,15 +87,18 @@ html,body {height:100%;}
 #aluminium span {
 	color: #d33333;
 }
-nav{
+nav.navbar{
 	height: 84px;
-	padding-top: 35px;
+	padding-top: 25px;
 	padding-left: 15px;
+	background: transparent;
+	border:0;
+	margin-bottom: 0;
 }
 nav .wrapper{
 	height: 100%;
 }
-nav a{
+nav.navbar>.collapse>ul>li>a{
 	font-size: 15px;
 	text-decoration: none;
 	border: 1px solid rgb(68, 63, 63);
@@ -105,24 +108,71 @@ nav a{
 	margin-right: 4px;
 	font-family: 'Open Sans', sans-serif;
 }
-nav a:hover{
+nav #nav-content{
+	padding-left: 0;
+}
+nav.navbar>.collapse>ul>li>a:hover{
 	text-decoration: none;
-	background: rgb(68, 63, 63);
+	background: rgb(68, 63, 63) !important;
 	color: white !important;
 }
-nav a:focus{
+nav.navbar>.collapse>ul>li>a:focus{
 	outline:0;
 	text-decoration: none;
 	color:rgb(68, 63, 63);
+	background: transparent;
 }
 nav a:active{
 	color:white;
+}
+nav.navbar>.collapse>ul>li.dropdown>ul.dropdown-menu{
+	margin-left: 7px;
+	margin-top: 10px;
+	background: rgba(255, 255, 255, 0.851);
+}
+ul.dropdown-menu:before{
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 143px;
+    bottom: auto;
+    left: auto;
+    border-width: 0 15px 15px 0;
+    border-color:rgba(255, 255, 255, 0.851) transparent;
+    border-style:solid;
+    width:0;
+    display:block;
+}
+nav.navbar>.collapse>ul>li>p{
+	padding-top: 10px;
+	margin-right: 4px;
 }
 nav span.btn{
 	font-size: 15px;
 	border-radius: 50px;
 	padding: 7px;
 	font-family: 'Open Sans', sans-serif;
+}
+nav .tip{
+	margin-top: 15px;
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, 0.702);
+	width:322px;
+	position: absolute;
+	z-index: 10;
+	opacity: 0;
+	transition: all .3s;
+}
+nav .tip.show{
+	opacity:1;
+}
+nav .tip img{
+	float:left;
+	padding:29px 9px 0 9px;
+}
+nav .tip p{
+	margin-top: 7px;
+	margin-bottom: 7px;
 }
 .metr{
 	font-family: 'Open Sans', sans-serif;
@@ -156,10 +206,10 @@ footer{
 	width:auto !important;
 }
 .JivoSite {
-  font-size: 14px;
-  font-family: "Open Sans", sans-serif;
-  color: rgba(255, 255, 255, 0.38);
-  line-height: 1.286;
+	font-size: 14px;
+	font-family: "Open Sans", sans-serif;
+	color: rgba(255, 255, 255, 0.38);
+	line-height: 1.286;
 }
 .online-consult {
 	font-size: 16px;
@@ -177,7 +227,7 @@ footer{
 	height:100%;
 	width: 100%;
 	z-index:10;
-	transition: 2s;
+	transition: opacity 2s;
 	opacity:0;
 }
 .modal-container.show{
@@ -275,4 +325,3 @@ footer{
 #modal input[type=radio]:hover + label {
 	text-decoration: underline;
 }
-
