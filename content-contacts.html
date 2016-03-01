@@ -1,9 +1,9 @@
-
+<script src="js/googleMaps.js"></script>
 	<div class="row">
 		<div class="col-lg-1"><h6><a href="#" title="#" class="accent-text">Главная</a>><a href="#" title="#" class="primary-text">Контакты</a><h6></div>
 	</div>
 	<div class="row">
-		<div class="col-lg-5">
+		<div class="col-lg-6">
 			<p><h2>Наши контакты</h2></p>
 			<p><img src="img/icon_phone.png" style="float:left;"><h4><b> &nbsp &nbsp+380-51-XXX-XX-XX</b> | Центральный офис</h4></p>
 			<p><img src="img/icon_smartphone.png" style="float:left;"><h4><b> &nbsp &nbsp+380-93-XXX-XX-XX</b> | Сервисный центр</h4></p>
@@ -18,49 +18,62 @@
 			</div>
 		</div>
 
-		<div class="col-lg-6 back-black">
+		<div class="col-lg-6">
+			<div class="back-black">
+				<p><h2>Связаться с нами</h2></p>
 
-			<p><h2>Связаться с нами</h2></p>
+				<div class="row">
+					<div class="col-lg-6 mg">
+						<div class="input-group-lg bg-width">
+						  <input type="text" class="form-control" placeholder="Ваше имя">
+						</div>
+					</div>
 
-			<div class="row">
-				<div class="col-lg-6 mg">
-					<div class="input-group-lg bg-width">
-					  <input type="text" class="form-control" placeholder="Ваше имя">
+					<div class="col-lg-6 mg">
+						<div class="input-group-lg bg-width">
+						  <input type="text" class="form-control" placeholder="Ваш телефон">
+						</div>
 					</div>
 				</div>
 
-				<div class="col-lg-6 mg">
-					<div class="input-group-lg bg-width">
-					  <input type="text" class="form-control" placeholder="Ваш телефон">
+				<div class="row">
+					<div class="col-lg-12 mg">
+						<div class="input-group-lg bg-width">
+						  <input type="text" class="form-control" placeholder="Ваш e-mail">
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12 mg">
+						<div class="input-group-lg bg-width">
+						  <textarea class="form-control" style="height: 90px;" placeholder="Ваше сообщение"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-12 mg">
+						<button type="button" class="btn accent btn-lg btn-block">Отправить сообщение</button>
 					</div>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-lg-12 mg">
-					<div class="input-group-lg bg-width">
-					  <input type="text" class="form-control" placeholder="Ваш e-mail">
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-12 mg">
-					<div class="input-group-lg bg-width">
-					  <textarea class="form-control" style="height: 90px;" placeholder="Ваше сообщение"></textarea>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-12 mg">
-					<button type="button" class="btn accent btn-lg btn-block">Отправить сообщение</button>
-				</div>
-			</div>
-	</div>
+		</div>
 </div>
 <div class="row">
-	<div class="col-lg-10">
-		<img src="img/map.png" style="float:left;">
+	<div class="col-lg-12">
+		<div id="map"></div>
 	</div>
 </div>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(46.970616, 32.001378),
+    zoom:15,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("map"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
