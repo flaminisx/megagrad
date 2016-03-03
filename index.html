@@ -13,7 +13,7 @@
 			<div class="row main-row">
 				<div class="col-lg-2 left-bar no-padding">
 					<div class="logo-wrapper">
-						<a href="#"><div class="logo"></div></a>
+						<div class="logo"></div>
 					</div>
 					<div class="nav-left">
 						<ul id="pvh">
@@ -49,36 +49,17 @@
 					</div>
 				</div>
 				<div class="col-lg-10 background no-padding">
-					<nav class="navbar">
-						<div class="navbar-right">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-content" aria-expanded="false">
-								<img src="img/ic_menu_black.png">
-							</button>
+					<nav>
+						<div class="wrapper">
+							<a href="#main"><img src="img/ic_menu_48px.png"> Производство</a>
+							<a href="#">Услуги</a>
+							<a href="#objects">Галерея работ</a>
+							<a href="#discount">Акции</a>
+							<a href="#news">Новости</a>
+							<a href="#content-contacts">Контакты</a>
+							<span class="bold">+38 (067) 123 45 67</span>
+							<span class="btn accent">Перезвоните мне</span>
 						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="nav-content">
-						<ul class="nav navbar-nav">
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="img/ic_menu_48px.png" style="padding-bottom:3px;"> О Компании</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Партнеры</a></li>
-									<li><a href="#">Сертификаты</a></li>
-								</ul>
-							</li>
-							<li class="active"><a href="#" class="tooltiped">Услуги</a>
-								<div class="tip row">
-									<img src="./img/info.png" class="col-lg-2">
-									<p class="col-lg-10">Разработка эскизов, технических и рабочих проектов изделий, светопрозрачных конструкций из алюминиевого профиля и стали</p>
-								</div>
-							</li>
-							<li><a href="#">Галерея работ</a></li>
-							<li><a href="#">Акции</a></li>
-							<li><a href="#">Новости</a></li>
-							<li><a href="#">Контакты</a></li>
-							<li><p class="bold">+38 (067) 123 45 67</p></li>
-							<li><span class="accent btn">Перезвоните мне</span></li>
-						</ul>
-						</div><!-- /.navbar-collapse -->
 					</nav>
 					<main id="main-content">
 						
@@ -178,7 +159,8 @@
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				var p = (location.hash) ? location.hash.replace("#", "") : "main";
+				var p = (location.hash) ? location.hash.replace("#", "") : "some-news";
+				//console.log(p);
 				changePage(p);
 				$("nav").find("a").click(function(e){
 					changePage($(e.target).attr("href").replace("#", ""));
