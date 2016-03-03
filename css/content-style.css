@@ -90,10 +90,59 @@ body{
 	padding:0 15px 0 15px;
 	overflow:hidden;
 }
-.slider-container img{
+.slider-container .images img{
 	width:100%;
 	display: none;
 }
 .slider-container img.show{
 	display:block;
+}
+.arrows-wrapper{
+	position: absolute;
+	width:100%;
+}
+.arrows{
+	z-index: 10;
+	position:absolute;
+	right:45px;
+	bottom: 10px;
+}
+.checkboxes-wrapper{
+	position:relative;
+	left: 60%;
+	bottom: 30px;
+}
+.low-slider .images{
+	padding: 0;
+	overflow: hidden;
+	height: 60px;
+}
+.low-slider .images .wrapper{
+	position:absolute;
+	height: 60px;
+	width: 800px;
+	z-index: 10;
+	transition: all 0.5s;
+}
+.low-slider .images img{
+	width:173px;
+	float:left;
+	padding: 7px;
+	display:block;
+}
+.last-tasks {
+  background-color: rgb(255, 255, 255);
+  height: 138px;
+}
+.last-tasks img{
+	float:left;
+	margin-right: 15px;
+}
+.last-tasks div a{
+	display: block;
+	color: rgb(68, 63, 63);
+	margin-top: 65px;
+}
+.last-tasks div h4{
+	margin-bottom:3px;
 }

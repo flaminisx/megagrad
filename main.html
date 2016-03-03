@@ -5,21 +5,138 @@
 		<img src="img/slider3.png">
 		<img src="img/slider4.png">
 	</div>
+	<div class="arrows-wrapper">
+		<div class="arrows">
+			<img id="slider-left" src="img/ic_arrow_left.png">
+			<img id="slider-right" src="img/ic_arrow_right.png">
+		</div>
+	</div>
+	<div class="checkboxes-wrapper">
+		<div class="checkboxes">
+			<input type="radio" name="image">
+			<input type="radio" name="image">
+			<input type="radio" name="image">
+			<input type="radio" name="image">
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-6">
+		<h1>Наши бренды</h1>
+		<div class="row low-slider">
+			<div class="col-lg-2 arrow arrow-left"><img src="img/ic_arrow_left_black.png"></div>
+			<div class="col-lg-8 images">
+				<div class="wrapper">
+					<img src="img/Rehau_Logo.png">
+					<img src="img/alutech_logo.png">
+					<img src="img/logo-schuco.png">
+					<img src="img/roltek-logo.png">
+				</div>
+			</div>
+			<div class="col-lg-2 arrow arrow-right"><img src="img/ic_arrow_right_black.png"></div>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<h1>Последние работы</h1>
+		<div class="row last-tasks">
+			<img src="img/last-tasks.png">
+			<div>
+				<h4>IQ House</h4>
+				жилой комплекс
+				<a href="#">Смотреть все работы </a>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script>
-	$(document).ready(function(){
-		var images = $(".slider-container").find("img");
-		//$(".slider-container").height($(images[0]).height());
+	function Slider(container){
+		var images = container.find(".images").find("img");
+		var checkboxes = container.find(".checkboxes").find("input");
 		var shownNum = 0;
-		var lastShown = 0;
-		$(".slider-container").click(function(){
-			lastShown = shownNum;
+		var running = false;
+		var timing = 6000;
+		var th = this;
+		container.find("#slider-left").click(function(){
+			slider.prev();
+		});
+		container.find("#slider-right").click(function(){
+			slider.next();
+		});
+		checkboxes.click(function(e){
+			checkboxes.each(function(index, element){
+				if(element==e.target){
+					var lastShown = shownNum;
+					showNum = index;
+					console.log(index);
+					$(images[lastShown]).fadeOut(function(){
+						$(checkboxes[lastShown]).prop("checked", false);
+						$(checkboxes[shownNum]).prop("checked", true);
+						$(images[shownNum]).fadeIn();
+					});
+				}
+			});
+		});
+		this.next = function(){
+			var lastShown = shownNum;
 			if(shownNum != images.length - 1) shownNum++;
 				else shownNum = 0;
 			$(images[lastShown]).fadeOut(function(){
+				$(checkboxes[lastShown]).prop("checked", false);
+				$(checkboxes[shownNum]).prop("checked", true);
 				$(images[shownNum]).fadeIn();
 			});
+		};
+		this.prev = function(){
+			var lastShown = shownNum;
+			if(shownNum != 0) shownNum--;
+				else shownNum = images.length - 1;
+			$(images[lastShown]).fadeOut(function(){
+				$(checkboxes[lastShown]).prop("checked", false);
+				$(checkboxes[shownNum]).prop("checked", true);
+				$(images[shownNum]).fadeIn();
+			});
+		};
+		this.start = function(){
+			running = true;
+			step();
+		};
+		var step = function(){
+			if(running){
+				th.next();
+				setTimeout(step, timing);
+			}
+		};
+		this.stop = function(){
+			running = false; 
+		};
+	}
+	function LowSlider(container){
+		var images = container.find(".images").find("img");
+		var wrapper = container.find(".images").find(".wrapper");
+		var slides = Math.floor(images.length/2) - 1;
+		var slide = 0;
+		console.log(slides);
+		container.find(".arrow-left").click(function(){
+			if(slide==0){
+				slide=0;
+			}else{
+				slide--;
+			}
+			wrapper.css("margin-left", -slide * 346)
 		});
+		container.find(".arrow-right").click(function(){
+			if(slide==slides){
+				slide=0;
+			}else{
+				slide++;
+			}
+			wrapper.css("margin-left", -slide * 346)
+		});
+	}
+	$(document).ready(function(){
+		slider = new Slider($(".slider-container"));
+		slider.start();
+		lowSlider = new LowSlider($(".low-slider"));
 	});
 </script>
