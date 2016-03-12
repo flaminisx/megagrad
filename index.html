@@ -15,32 +15,36 @@
 					<div class="logo-wrapper">
 						<a href="#"><div class="logo"></div></a>
 					</div>
-					<div class="nav-left">
-						<ul id="pvh">
+					<ul class="nav-left">
+						<li id="pvh">
 							<span><img src="img/pvh-icon.png">Изделия из ПВХ</span>
-							<li>Оконные системы</li>
-							<li>Дверные системы</li>
-						</ul>
-						<ul id="aluminium">
-							<span class="accent-text"><img src="img/aluminium-icon-active.png">Изделия из Алюминия</span>
-							<li>Перильные ограждения</li>
-							<li>Окна и двери</li>
-							<li>Зимние сады</li>
-							<li>Пирамиды</li>
-						</ul>
-						<ul id="balcony">
+							<ul>
+								<li>Оконные системы</li>
+								<li>Дверные системы</li>
+							</ul>
+						</li>
+						<li id="aluminium">
+							<span><img src="img/aluminium-icon.png">Изделия из Алюминия</span>
+							<ul>
+								<li>Перильные ограждения</li>
+								<li>Окна и двери</li>
+								<li>Зимние сады</li>
+								<li>Пирамиды</li>
+							</ul>
+						</li>
+						<li id="balcony">
 							<span><img src="img/balcony-icon.png">Балконы и лоджии</span>
-						</ul>
-						<ul id="blinds">
+						</li>
+						<li id="blinds">
 							<span><img src="img/blinds-icon.png">Роллетные системы</span>
-						</ul>
-						<ul id="gates">
+						</li>
+						<li id="gates">
 							<span><img src="img/gates-icon.png">Ворота и автоматика</span>
-						</ul>
-						<ul id="facade">
+						</li>
+						<li id="facade">
 							<span><img src="img/facade-icon.png">Вентилируемие<br>фасадные системы</span>
-						</ul>
-					</div>
+						</li>
+					</ul>
 					<div class="metr accent">
 						<div class="wrapper">
 							<img src="img/icon_roulette.png">
@@ -194,11 +198,31 @@
  				$(".modal-container").click(function(e){
  					if(e.target==$(".modal-container").get(0)) $(".modal-container").fadeOut();
  				});
+ 				$(".nav-left>li").click(function(e){
+ 					var t = (e.target.nodeName=="LI")? $(e.target) : $(e.target).parent("li");
+ 					if(t.hasClass("active")){
+ 						t.removeClass("active");
+ 						t.find("span").removeClass("accent-text");
+ 						t.find("img").attr("src", getDefaultImagePath(t.find("img").attr("src")));
+ 						t.find("ul").slideUp();
+ 					}else{
+ 						t.addClass("active");
+ 						t.find("span").addClass("accent-text");
+ 						t.find("img").attr("src", getActiveImagePath(t.find("img").attr("src")));
+ 						t.find("ul").slideDown();
+ 					}
+ 				});
 			});
 			function changePage(page_name){
 				$("main#main-content").load(page_name + ".html", function(){
 					$("#header-text").text($(".hidden-header-text").attr("value"));
 				});
+			}
+			function getActiveImagePath(path){
+				return path.replace(".png","-active.png");
+			}
+			function getDefaultImagePath(path){
+				return path.replace("-active.png",".png");
 			}
 		</script>
 	</body>
